@@ -1,5 +1,5 @@
 services:
-  core:
+  sq_core:
     image: golang:1.25-alpine
     environment:
       DB_URL: dmldroplet:12279
@@ -11,4 +11,6 @@ services:
       - ../../../SQ-Core:/service
       - ./init.sh:/init.sh
     command:
-      - init.sh
+      - /init.sh
+
+
