@@ -1,6 +1,7 @@
 services:
   sq_core:
     image: golang:1.25-alpine
+    container_name: sq_core
     environment:
       DB_URL: localhost:12279
       DB_USERNAME: dmlroot
