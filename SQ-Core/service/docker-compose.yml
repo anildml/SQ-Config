@@ -1,8 +1,4 @@
 services:
-  backend:
-    build:
-      context: backend
-      target: builder
   core:
     image: golang:1.25-alpine
     environment:
@@ -12,4 +8,7 @@ services:
     ports:
       - 12280:8080
     volumes:
-      - ./SQ-Core:/service
+      - ../../../SQ-Core:/service
+      - ./init.sh:/init.sh
+    command:
+      - init.sh
