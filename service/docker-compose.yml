@@ -2,13 +2,13 @@ services:
   sq_core:
     image: golang:1.25-alpine
     environment:
-      DB_URL: dmldroplet:12279
+      DB_URL: localhost:12279
       DB_USERNAME: dmlroot
       DB_PASSWORD: guzelliginbesparaetmez
     ports:
       - 12280:8080
     volumes:
-      - ../../../SQ-Core:/service
+      - ../../SQ-Core:/service
       - ./init.sh:/init.sh
     command:
       - /init.sh
