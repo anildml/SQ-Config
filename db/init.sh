@@ -1,2 +1,2 @@
 #!/bin/sh
-docker exec -it mongodb sh -c "mongorestore -u dmlroot -p guzelliginbesparaetmez --archive=/db.dump"
+docker exec -it sq_db sh -c "mongorestore -u dmlroot -p guzelliginbesparaetmez --archive=/db.dump"
