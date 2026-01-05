@@ -12,8 +12,9 @@ services:
       - ./mongo-data:/data/db # Persist MongoDB data
       - ./mongo-config:/data/configdb # Persist MongoDB configuration
       - ./db.dump:/db.dump
-    post_start:
-      - command: mongorestore -u dmlroot -p guzelliginbesparaetmez --archive=/db.dump
+#    post_start:
+#      - command: mongorestore -u dmlroot -p guzelliginbesparaetmez --archive=/db.dump
+#      - user: root
 
 volumes:
   mongo-data:
