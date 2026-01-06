@@ -12,12 +12,7 @@ services:
       - ./mongo-data:/data/db # Persist MongoDB data
       - ./mongo-config:/data/configdb # Persist MongoDB configuration
       - ./db.dump:/db.dump
-#    post_start:
-#      - command: echo here
-#      - command: ["mongorestore -u dmlroot -p guzelliginbesparaetmez --archive=/db.dump"]
-
-networks:
-  - sq_network
+    network_mode: host
 
 volumes:
   mongo-data:
