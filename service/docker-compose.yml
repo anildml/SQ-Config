@@ -3,7 +3,7 @@ services:
     image: golang:1.25-alpine
     container_name: sq_core
     environment:
-      DB_URL: localhost:12279
+      DB_URL: localhost:27017
       DB_USERNAME: dmlroot
       DB_PASSWORD: guzelliginbesparaetmez
     ports:
@@ -12,4 +12,4 @@ services:
       - ../../SQ-Core:/service
     command:
       - /service/app
-
+    network_mode: host
