@@ -12,3 +12,6 @@ services:
       - ../../SQ-Core:/service
     command:
       - /service/app
+
+networks:
+  - sq_network
