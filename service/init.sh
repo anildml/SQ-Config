@@ -6,4 +6,6 @@ echo module download finished
 echo project build started
 go build -o app
 echo project build finished
+
+cd ../SQ-Config/service/
 docker compose up
