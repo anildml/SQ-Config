@@ -1,5 +1,5 @@
 services:
-  mongo:
+  sq_db:
     image: mongo:8.2.3
     container_name: sq_db
     restart: always
