@@ -1,0 +1,11 @@
+services:
+  sq_dashboard:
+    image: node:24-bullseye-slim
+    container_name: sq_dashboard
+    restart: always
+    working_dir: /dashboard
+    volumes:
+      - ../../SQ-Dashboard:/dashboard
+    command:
+      - ng serve --port 12281
+    network_mode: host
