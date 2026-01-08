@@ -6,8 +6,7 @@ services:
       DB_URL: localhost:27017
       DB_USERNAME: dmlroot
       DB_PASSWORD: guzelliginbesparaetmez
-    ports:
-      - 12280:8080
+      SERVICE_PORT: 12280
     volumes:
       - ../../SQ-Core:/service
     command:
