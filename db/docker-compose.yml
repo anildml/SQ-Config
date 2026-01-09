@@ -8,6 +8,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: guzelliginbesparaetmez
     volumes:
       - ./data:/data
+      - ./db.dump:/db.dumps
       - ./post_setup.sh:/docker-entrypoint-initdb.d/post_setup.sh
     network_mode: host
     
