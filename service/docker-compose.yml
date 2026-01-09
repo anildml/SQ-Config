@@ -9,6 +9,7 @@ services:
       SERVICE_PORT: 12280
     volumes:
       - ../../SQ-Core:/service
+      - ./init.sh:/init.sh
     command:
       - /init.sh
     network_mode: host
