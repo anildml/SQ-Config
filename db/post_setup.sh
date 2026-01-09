@@ -1,2 +1,2 @@
 #!/bin/sh
-mongorestore -u dmlroot -p guzelliginbesparaetmez --archive=/db.dump
+mongorestore --archive=/db.dump
