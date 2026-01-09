@@ -1,0 +1,32 @@
+services:
+  sq_db:
+    image: mongo:8.2.3
+    container_name: sq_db
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: dmlroot
+      MONGO_INITDB_ROOT_PASSWORD: guzelliginbesparaetmez
+    ports:
+      - 27017:27017
+    volumes:
+      - ./db/data:/data
+      - ./db/db.dump:/db.dump
+      - ./db/post_setup.sh:/docker-entrypoint-initdb.d/post_setup.sh
+  sq_core:
+    image: golang:1.25-alpine
+    container_name: sq_core
+    depends_on:
+      sq_db:
+        condition: service_started
+    environment:
+      DB_URL: sq_db:27017
+      DB_USERNAME: dmlroot
+      DB_PASSWORD: guzelliginbesparaetmez
+      SERVICE_PORT: 12280
+    ports:
+      - 12280:12280
+    volumes:
+      - ../SQ-Core:/service
+      - ./service/init.sh:/init.sh
+    command:
+      - /init.sh
