@@ -7,13 +7,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: dmlroot # Set the admin username
       MONGO_INITDB_ROOT_PASSWORD: guzelliginbesparaetmez # Set the admin password
     volumes:
-      - ./mongo-data:/data/db # Persist MongoDB data
-      - ./mongo-config:/data/configdb # Persist MongoDB configuration
-      - ./db.dump:/db.dump
+      - ./data:/data # Persist MongoDB data
+      - ./post_setup.sh:/docker-entrypoint-initdb.d/post_setup.sh
     network_mode: host
-
-volumes:
-  mongo-data:
-    driver: local
-  mongo-config:
-    driver: local
+    
