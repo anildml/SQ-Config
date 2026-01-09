@@ -10,5 +10,5 @@ services:
     volumes:
       - ../../SQ-Core:/service
     command:
-      - /service/app
+      - /init.sh
     network_mode: host

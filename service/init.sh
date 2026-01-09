@@ -1,11 +1,4 @@
 #!/bin/sh
-cd ../../SQ-Core/
-echo module download started
-go mod download
-echo module download finished
-echo project build started
+cd /service
 go build -o app
-echo project build finished
-
-cd ../SQ-Config/service
-docker compose up -d
+./app
