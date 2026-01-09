@@ -4,10 +4,10 @@ services:
     container_name: sq_db
     restart: always
     environment:
-      MONGO_INITDB_ROOT_USERNAME: dmlroot # Set the admin username
-      MONGO_INITDB_ROOT_PASSWORD: guzelliginbesparaetmez # Set the admin password
+      MONGO_INITDB_ROOT_USERNAME: dmlroot
+      MONGO_INITDB_ROOT_PASSWORD: guzelliginbesparaetmez
     volumes:
-      - ./data:/data # Persist MongoDB data
+      - ./data:/data
       - ./post_setup.sh:/docker-entrypoint-initdb.d/post_setup.sh
     network_mode: host
     
